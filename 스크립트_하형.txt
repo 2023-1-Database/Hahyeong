@@ -1,0 +1,7 @@
+!! 스크립트에 뷰 넣어야 함
+CREATE VIEW mypageView AS 
+SELECT Book_Title, Return_date, Member_ID
+FROM (SELECT * FROM DB2023_Book_Status NATURAL JOIN DB2023_Book) A;
+
+!! 인덱스도 스크립에 넣어야 함
+CREATE INDEX DB2023_Book_Status_index ON DB2023_Book_Status(Book_ID);
